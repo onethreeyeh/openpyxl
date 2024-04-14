@@ -1,6 +1,10 @@
+# 调库
+
+```python
+from openpyxl import Workbook,load_workbook
+```
+
 # 对象
-
-
 
 ### 创建对象
 
@@ -18,8 +22,6 @@ ws = wb.active
 
 # 文件
 
-
-
 ### 保存
 
 ```python
@@ -30,13 +32,11 @@ wb.save("text.xlsx")
 
 ```python
 llshw = load_workbook("llshw.xlsx")
+#只读取公式计算结果，不读取公式
+llshw = load_workbook("llshw.xlsx",data_only=True)
 ```
 
-
-
 # 工作表
-
-
 
 ### 打印所有工作表
 
@@ -71,8 +71,6 @@ del answer["Sheet2"]
 ### 
 
 # 单元格
-
-
 
 ### 单元格赋值
 
@@ -140,11 +138,7 @@ acsheet.move_range("C5:D6",1,-1)
 acsheet.append([2,3,1,6])
 ```
 
-
-
 # 公式
-
-
 
 ### 使用公式
 
@@ -159,7 +153,5 @@ acsheet["F1"] = "=SUM(A1:E1)"
 from openpyxl.formula.translate import Translator
 acsheet["F2"] = Translator(formula="=SUM(A1:E1)",origin="F1").translate_formula("F2")
 for cell in acsheet["F3:F10"]:
-	cell[0].value = Translator(formula="=SUM(A1:E1)",origin="F1").translate_formula(cell[0].coordinate)
+    cell[0].value = Translator(formula="=SUM(A1:E1)",origin="F1").translate_formula(cell[0].coordinate)
 ```
-
-
