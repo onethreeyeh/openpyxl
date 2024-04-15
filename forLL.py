@@ -1,5 +1,6 @@
 from openpyxl import Workbook,load_workbook
 from openpyxl.styles import Alignment
+from openpyxl.styles import Border,Side
 
 #llshw = load_workbook("llshw.xlsx",data_only=True)
 
@@ -76,5 +77,153 @@ for i in range(1,17):
 	sheet.merge_cells(start_row=1,start_column=i,end_row=4,end_column=i)
 	cell = sheet.cell(1,i)
 	cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("A5:A142")
+cell = sheet.cell(5,1)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("A143:A172")
+cell = sheet.cell(143,1)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("A173:A223")
+cell = sheet.cell(173,1)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("A224:A256")
+cell = sheet.cell(224,1)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("A173:A223")
+cell = sheet.cell(173,1)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("A257:A271")
+cell = sheet.cell(257,1)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("A272:C274")
+cell = sheet.cell(272,1)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+i = 5
+for count in range(83):
+	sheet.merge_cells(start_row=i,start_column=3,end_row=i+2,end_column=3)
+	cell = sheet.cell(i,3)
+	cell.alignment = Alignment(horizontal='center', vertical='center')
+	i += 3
+
+
+sheet.merge_cells("B5:B25")
+cell = sheet.cell(5,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B26:B67")
+cell = sheet.cell(26,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B68:B103")
+cell = sheet.cell(68,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B104:B115")
+cell = sheet.cell(104,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B116:B130")
+cell = sheet.cell(116,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B131:B133")
+cell = sheet.cell(131,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B134:B136")
+cell = sheet.cell(134,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B137:B139")
+cell = sheet.cell(137,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B140:C142")
+cell = sheet.cell(140,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B143:B160")
+cell = sheet.cell(143,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B161:B166")
+cell = sheet.cell(161,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B167:B169")
+cell = sheet.cell(167,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B170:C172")
+cell = sheet.cell(170,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B173:B214")
+cell = sheet.cell(173,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B215:B217")
+cell = sheet.cell(215,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B218:B220")
+cell = sheet.cell(218,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B221:C223")
+cell = sheet.cell(221,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B224:B253")
+cell = sheet.cell(224,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B254:C256")
+cell = sheet.cell(254,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B5:B25")
+cell = sheet.cell(5,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B257:C259")
+cell = sheet.cell(257,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B260:C262")
+cell = sheet.cell(260,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B263:C265")
+cell = sheet.cell(263,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B266:C268")
+cell = sheet.cell(266,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+sheet.merge_cells("B269:C271")
+cell = sheet.cell(269,2)
+cell.alignment = Alignment(horizontal='center', vertical='center')
+
+
+
+#设置边框
+border = Border(left=Side(border_style='thin'), 
+                right=Side(border_style='thin'), 
+                top=Side(border_style='thin'), 
+                bottom=Side(border_style='thin'))
+cell_range = "A1:P274"
+for row in sheet[cell_range]:
+	for cell in row:
+		cell.border = border
 
 answer.save("answer.xlsx")
