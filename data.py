@@ -15,12 +15,26 @@ TeamLeader = ["许高杰","曹彦伟","曹鸿涛","刘兆平","诸葛飞","江�
 "夏永高","陆之毅","谢银君","赵一天","张建涛","吴爱国","李华","左国坤","王荣","郑建萍","郭明全",
 "李辉"]
 
+
+#创建空数组
 data_rows = 66
 data_cols = 10
-
 data = []
 for i in range(data_rows):
 	row = []
 	for j in range(data_cols):
 		row.append(0)
 	data.append(row)
+
+#高技术
+for row in zhsheet:
+	if(row[74].value == "科技发展部" or row[74].value == "科技发展部（重任处）"):
+		if(row[73].value == "高技术"):
+			if (row[64].value == "YES"):
+				if(row[62].value == None):
+					pass
+				else:
+					for name in TeamLeader:
+						if name == row[67].value:
+							
+					sun += row[62].value
