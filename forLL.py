@@ -35,13 +35,15 @@ sheet["A272"].value = "工研院总计"
 sheet["B5"].value = "纳米"
 sheet["B26"].value = "海洋"
 sheet["B68"].value = "高分子"
-sheet["B104"].value = "先进能源材料工程实验室"
-sheet["B116"].value = "磁材实验室"
-sheet["B131"].value = "磁性材料应用技术研究中心"
-sheet["B134"].value = "稀土永磁材料联合创新中心"
-sheet["B140"].value = "材料所总计"
+sheet["B107"].value = "先进能源材料工程实验室"
+sheet["B119"].value = "磁材实验室"
+sheet["B134"].value = "磁性材料应用技术研究中心"
+sheet["B137"].value = "稀土永磁材料联合创新中心"
+sheet["B143"].value = "材料所总计"
+sheet["B146"].value = "机器人与智能制造装备技术实验室"
 sheet["B161"].value = "激光极端制造研究中心"
-sheet["B170"].value = "先进制造所总计"
+sheet["B167"].value = "特种飞行器系统工程研究中心"
+sheet["B173"].value = "先进制造所总计"
 sheet["B173"].value = "新能源"
 sheet["B215"].value = "动力锂电"
 sheet["B221"].value = "新能源所总计"
@@ -61,14 +63,17 @@ for i in range(5,275):
 	else:
 		sheet.cell(i,4,"2023年到位")
 
-Ctext = ["许高杰","曹彦伟","曹鸿涛","向超宇","诸葛飞","先进纳米实验室","纳米小计",\
-"江南","王立平","汪爱英","宋振纶","曾志翔","张涛","茅东升","蒲吉斌","黄政仁","陈涛","刘小青","常可可","中科院海洋新材料与应用技术重点实验室","海洋小计",\
-"朱锦","郑文革","姚强","方省众","陈鹏","刘富","张永刚","王震","张浩","余海斌","高分子与复合材料实验室","高分子小计",\
+Ctext = ["许高杰","曹彦伟","曹鸿涛","刘兆平","诸葛飞","先进纳米实验室","纳米小计",\
+"江南","王立平","汪爱英","宋振纶","曾志翔","张涛","茅东升","蒲吉斌","黄政仁","陈涛","刘小青","常可可","海洋关键材料重点实验室","海洋小计",\
+"朱锦","郑文革","姚强","方省众","陈鹏","刘富","张永刚","王震","张浩","张健","余海斌","高分子与复合材料实验室","高分子小计",\
 "黄庆","张蕾","先进能源材料工程实验室","先进能源小计",\
 "王军强","李国伟","李润伟","中科院磁性材料与器件重点实验室","磁材小计",\
-"满其奎","闫阿儒","二级所","","张驰","祝颖丹","陈新民","蒋俊","肖江剑","赵夙","张文武","韦超","二级所","",\
-"宋伟杰","叶继春","陆之毅","葛子义","陈亮","况永波","尹宏峰","张亚杰","姚霞银","官万兵","杨明辉","张建","夏永高","谢银君","刘兆平","二级所","",\
+"满其奎","闫阿儒","二级所","","张驰","祝颖丹","蒋俊","肖江剑","赵夙","张文武","韦超","陈新民","二级所","",\
+"宋伟杰","叶继春","向超宇","葛子义","陈亮","况永波","尹宏峰","张亚杰","姚霞银","官万兵","杨明辉","夏永高","陆之毅","谢银君","二级所","",\
 "赵一天","张建涛","吴爱国","李华","左国坤","王荣","郑建萍","郭明全","李辉","二级所"]
+
+#B列合并数组
+Bmerge = [21,42,39,12,15,3,3,3,3,15,6,3,3,3,12,30,3,3,30]
 
 for i in range(0,83):
 	sheet.cell(3*i+5,3,Ctext[i])
@@ -78,24 +83,20 @@ for i in range(1,17):
 	cell = sheet.cell(1,i)
 	cell.alignment = Alignment(horizontal='center', vertical='center')
 
-sheet.merge_cells("A5:A142")
+sheet.merge_cells("A5:A145")
 cell = sheet.cell(5,1)
 cell.alignment = Alignment(horizontal='center', vertical='center')
 
-sheet.merge_cells("A143:A172")
-cell = sheet.cell(143,1)
+sheet.merge_cells("A146:A175")
+cell = sheet.cell(146,1)
 cell.alignment = Alignment(horizontal='center', vertical='center')
 
-sheet.merge_cells("A173:A223")
-cell = sheet.cell(173,1)
+sheet.merge_cells("A176:A223")
+cell = sheet.cell(176,1)
 cell.alignment = Alignment(horizontal='center', vertical='center')
 
 sheet.merge_cells("A224:A256")
 cell = sheet.cell(224,1)
-cell.alignment = Alignment(horizontal='center', vertical='center')
-
-sheet.merge_cells("A173:A223")
-cell = sheet.cell(173,1)
 cell.alignment = Alignment(horizontal='center', vertical='center')
 
 sheet.merge_cells("A257:A271")
@@ -113,7 +114,7 @@ for count in range(83):
 	cell.alignment = Alignment(horizontal='center', vertical='center')
 	i += 3
 
-
+'''
 sheet.merge_cells("B5:B25")
 cell = sheet.cell(5,2)
 cell.alignment = Alignment(horizontal='center', vertical='center')
@@ -213,7 +214,7 @@ cell.alignment = Alignment(horizontal='center', vertical='center')
 sheet.merge_cells("B269:C271")
 cell = sheet.cell(269,2)
 cell.alignment = Alignment(horizontal='center', vertical='center')
-
+'''
 
 
 #设置边框
